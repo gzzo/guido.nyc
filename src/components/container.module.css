@@ -10,3 +10,10 @@
   height: 100%;
   flex-direction: column;
 }
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  vertical-align: top;
+  overflow: hidden;
+}
