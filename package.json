@@ -1,26 +1,43 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "gatsby": "^1.9.45",
-    "gatsby-link": "^1.6.17",
-    "gatsby-plugin-react-helmet": "^1.0.5"
-  },
-  "keywords": [
-    "gatsby"
-  ],
+  "name": "guido-nyc",
+  "description": "guido.nyc homepage",
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "format": "prettier --write 'src/**/*.js' 'src/**/*.md'",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public ."
+  },
+  "dependencies": {
+    "gatsby": "next",
+    "gatsby-plugin-feed": "next",
+    "gatsby-plugin-google-analytics": "next",
+    "gatsby-plugin-offline": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sharp": "next",
+    "gatsby-plugin-typography": "next",
+    "gatsby-remark-copy-linked-files": "next",
+    "gatsby-remark-images": "next",
+    "gatsby-remark-prismjs": "next",
+    "gatsby-remark-responsive-iframe": "next",
+    "gatsby-remark-smartypants": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-transformer-remark": "next",
+    "gatsby-transformer-sharp": "next",
+    "lodash": "^4.17.10",
+    "prismjs": "^1.15.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.13",
+    "typography": "^0.16.17",
+    "typography-theme-ocean-beach": "^0.15.11"
   },
   "devDependencies": {
-    "prettier": "^1.6.1"
+    "eslint": "^5.3.0",
+    "eslint-plugin-react": "^7.11.1",
+    "gatsby-plugin-remove-trailing-slashes": "^1.0.9",
+    "prettier": "^1.14.2"
   }
 }
