@@ -3,6 +3,8 @@ const Promise = require('bluebird')
 const path = require('path')
 
 const { createFilePath } = require('gatsby-source-filesystem')
+const createPaginatedPages = require("gatsby-paginate")
+
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -13,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+            pages: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
               edges {
                 node {
                   fields {
@@ -21,6 +23,8 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    type
+                    tags
                   }
                 }
               }
@@ -33,12 +37,53 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+        const filteredPages = _.filter(result.data.pages.edges, post => post.node.frontmatter.type !== 'page')
 
+        // paginate posts
+        createPaginatedPages({
+          edges: filteredPages,
+          createPage: createPage,
+          pageTemplate: "src/templates/index.js",
+          pageLength: 2,
+          context: {}
+        })
+
+        // paginate tags
+        const postsByTag = {};
+        _.each(filteredPages, post => {
+          const {tags} = post.node.frontmatter;
+
+          if (!tags) {
+            return
+          }
+
+          _.each(tags, tag => {
+            if (postsByTag[tag] === undefined) {
+              postsByTag[tag] = [post]
+            } else {
+              postsByTag[tag].push(post)
+            }
+          })
+        })
+
+        _.each(postsByTag, (posts, tag) => {
+          createPaginatedPages({
+            edges: posts,
+            pathPrefix: tag,
+            createPage: createPage,
+            pageTemplate: "src/templates/tag.js",
+            pageLength: 2,
+            context: {
+              tag
+            }
+          })
+        })
+
+        // create all pages
+        const posts = result.data.pages.edges;
         _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+          const previous = index === posts.length - 1 ? null : posts[index + 1].node
+          const next = index === 0 ? null : posts[index - 1].node
 
           createPage({
             path: post.node.fields.slug,
