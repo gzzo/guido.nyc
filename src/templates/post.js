@@ -1,12 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from './layout';
-
+import Layout from './layout'
 
 class PostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark;
+    const post = this.props.data.markdownRemark
     return (
       <Layout>
         <h1>{post.frontmatter.title}</h1>

@@ -3,7 +3,7 @@ const Promise = require('bluebird')
 const path = require('path')
 
 const { createFilePath } = require('gatsby-source-filesystem')
-const createPaginatedPages = require("gatsby-paginate")
+const createPaginatedPages = require('gatsby-paginate')
 
 
 exports.createPages = ({ graphql, actions }) => {
@@ -15,15 +15,17 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            pages: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+            pages: allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+            ) {
               edges {
                 node {
                   fields {
                     slug
+                    collection
                   }
                   frontmatter {
                     title
-                    type
                     tags
                   }
                 }
@@ -37,20 +39,22 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const filteredPages = _.filter(result.data.pages.edges, post => post.node.frontmatter.type !== 'page')
+        const posts = _.filter(result.data.pages.edges, page => page.node.fields.collection === 'posts')
 
         // paginate posts
         createPaginatedPages({
-          edges: filteredPages,
+          edges: posts,
           createPage: createPage,
-          pageTemplate: "src/templates/index.js",
+          pageTemplate: 'src/templates/index.js',
           pageLength: 2,
-          context: {}
+          context: {
+            groupType: 'index'
+          }
         })
 
         // paginate tags
         const postsByTag = {};
-        _.each(filteredPages, post => {
+        _.each(posts, post => {
           const {tags} = post.node.frontmatter;
 
           if (!tags) {
@@ -71,19 +75,20 @@ exports.createPages = ({ graphql, actions }) => {
             edges: posts,
             pathPrefix: tag,
             createPage: createPage,
-            pageTemplate: "src/templates/tag.js",
+            pageTemplate: 'src/templates/index.js',
             pageLength: 2,
             context: {
+              groupType: 'tag',
               tag
             }
           })
         })
 
         // create all pages
-        const posts = result.data.pages.edges;
-        _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node
-          const next = index === 0 ? null : posts[index - 1].node
+        const pages = result.data.pages.edges;
+        _.each(pages, (post, index) => {
+          const previous = index === pages.length - 1 ? null : pages[index + 1].node
+          const next = index === 0 ? null : pages[index - 1].node
 
           createPage({
             path: post.node.fields.slug,
@@ -103,12 +108,25 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+  if (node.internal.type === 'MarkdownRemark') {
     createNodeField({
-      name: `slug`,
       node,
-      value,
+      name: 'slug',
+      value: createFilePath({ node, getNode }),
+    })
+
+    createNodeField({
+      node,
+      name: 'collection',
+      value: getNode(node.parent).sourceInstanceName,
     })
   }
+}
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
+  })
 }

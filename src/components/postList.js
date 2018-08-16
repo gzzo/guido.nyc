@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import PostRow from '../components/PostRow'
+import PostRow from './PostRow'
 import Template from '../templates/layout'
 
 const NavLink = props => {
@@ -12,24 +12,16 @@ const NavLink = props => {
   }
 }
 
-class Index extends React.Component {
-  getTitle() {
-    const { groupType, tag } = this.props.pageContext.additionalContext
-    if (groupType === 'index') {
-      return 'Recent posts'
-    } else if (groupType === 'tag') {
-      return `Posts tagged with ${tag}`
-    }
-  }
-
+class PostList extends React.Component {
   render() {
-    const { group, index, first, last, pageCount } = this.props.pageContext
+    const { title, pageContext } = this.props
+    const { group, index, first, last, pageCount } = pageContext
     const previousUrl = index - 1 == 1 ? '' : (index - 1).toString()
     const nextUrl = (index + 1).toString()
 
     return (
       <Template>
-        <h1>{this.getTitle()}</h1>
+        <h1>{title}</h1>
         {group.map(({ node }) => {
           return <PostRow key={node.fields.slug} node={node} />
         })}
@@ -44,4 +36,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default PostList

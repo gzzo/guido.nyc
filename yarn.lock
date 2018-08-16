@@ -4596,6 +4596,18 @@ gatsby-plugin-offline@next:
     lodash "^4.17.10"
     sw-precache "^5.2.1"
 
+gatsby-plugin-page-creator@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-1.0.1.tgz#6bad33a7f46cb5b87dbdaacc3c1bbd81ac63bc20"
+  dependencies:
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    chokidar "^1.7.0"
+    glob "^7.1.1"
+    lodash "^4.17.4"
+    parse-filepath "^1.0.1"
+    slash "^1.0.0"
+
 gatsby-plugin-page-creator@^2.0.0-beta.5:
   version "2.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.0.0-beta.5.tgz#36d19fcfb9dd72d213e5506f79fb7c6eaf7b548b"
@@ -4608,6 +4620,12 @@ gatsby-plugin-page-creator@^2.0.0-beta.5:
     lodash "^4.17.4"
     parse-filepath "^1.0.1"
     slash "^1.0.0"
+
+gatsby-plugin-postcss@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-1.0.0.tgz#60ba922ad8fae2b0af291aae12cb856ec7388537"
+  dependencies:
+    babel-runtime "^6.26.0"
 
 gatsby-plugin-react-helmet@next:
   version "3.0.0-beta.4"
@@ -7165,7 +7183,7 @@ modularscale@^1.0.2:
   dependencies:
     lodash.isnumber "^3.0.0"
 
-moment@^2.21.0:
+moment@^2.21.0, moment@^2.22.2:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
