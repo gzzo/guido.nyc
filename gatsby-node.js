@@ -44,6 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
         // paginate posts
         createPaginatedPages({
           edges: posts,
+          pathPrefix: '/posts',
           createPage: createPage,
           pageTemplate: 'src/templates/index.js',
           pageLength: 2,

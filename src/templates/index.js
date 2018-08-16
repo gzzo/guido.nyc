@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
-import PostRow from '../components/PostRow'
+import PostRow from '../components/postRow'
 import Template from '../templates/layout'
 
 const NavLink = props => {
