@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 class PostRow extends React.Component {
   render() {
     const { node } = this.props
-
     return (
       <div>
         <h4>

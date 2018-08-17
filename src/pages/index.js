@@ -15,7 +15,7 @@ class Index extends React.Component {
         <div>hero</div>
         <h1>Recent posts</h1>
         {edges.map(({ node }) => {
-          return <PostRow key={node.fields.slug} />
+          return <PostRow key={node.fields.slug} node={node} />
         })}
         {totalCount > INDEX_NUM_POSTS && (
           <Link to="/posts">See more posts</Link>

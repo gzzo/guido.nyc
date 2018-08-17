@@ -1,6 +1,7 @@
 import Typography from 'typography'
-import oceanBeachTheme from 'typography-theme-ocean-beach'
+import theme from 'typography-theme-ocean-beach'
+theme.overrideThemeStyles = ({ rhythm }, options) => ({})
 
-const typography = new Typography(oceanBeachTheme)
+const typography = new Typography(theme)
 
 export default typography

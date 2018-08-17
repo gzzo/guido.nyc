@@ -21,10 +21,10 @@
     margin: 0;
     padding: 0;
     overflow: initial;
-    float: left; /* 1 */
-    min-width: 100%; /* 2 */
+    float: left;
+    min-width: 100%;
 }
 
 .gatsby-highlight pre[class*="language-"].line-numbers {
-    padding-left: 2.8em; /* 3 */
+    padding-left: 2.8em;
 }

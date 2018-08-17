@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './container.module.css'
+import css from './container.module.scss'
 
 class Container extends React.Component {
   render() {
