@@ -19,7 +19,6 @@
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sharp": "next",
-    "gatsby-plugin-typography": "next",
     "gatsby-remark-copy-linked-files": "next",
     "gatsby-remark-images": "next",
     "gatsby-remark-prismjs": "next",
@@ -35,14 +34,13 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
-    "react-typography": "^0.16.13",
-    "typography": "^0.16.17",
-    "typography-theme-ocean-beach": "^0.15.11"
+    "sanitize.css": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^5.3.0",
     "eslint-plugin-react": "^7.11.1",
-    "gatsby-plugin-remove-trailing-slashes": "^1.0.9",
-    "prettier": "^1.14.2"
+    "gatsby-plugin-remove-trailing-slashes": "next",
+    "prettier": "^1.14.2",
+    "webpack": "^4.16.5"
   }
 }

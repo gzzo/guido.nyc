@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import PostRow from '../components/postRow'
-import Template from '../templates/layout'
+import PostRow from 'components/postRow'
+import Layout from './layout'
 
 const NavLink = props => {
   if (!props.test) {
@@ -28,7 +28,7 @@ class Index extends React.Component {
     const nextUrl = (index + 1).toString()
 
     return (
-      <Template>
+      <Layout>
         <h1>{this.getTitle()}</h1>
         {group.map(({ node }) => {
           return <PostRow key={node.fields.slug} node={node} />
@@ -39,7 +39,7 @@ class Index extends React.Component {
         <div className="nextLink">
           <NavLink test={last} url={nextUrl} text="Go to Next Page" />
         </div>
-      </Template>
+      </Layout>
     )
   }
 }

@@ -1,0 +1,10 @@
+@import 'constants.scss';
+
+.container {
+  background-color: $color3;
+  padding: $lineHeight * 2;
+}
+
+.title {
+  margin-top: 0;
+}

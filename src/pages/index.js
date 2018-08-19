@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from 'templates/layout'
 import PostRow from 'components/postRow'
+import Hero from 'components/hero'
 
 const INDEX_NUM_POSTS = 3 // same as limit in query below
 
@@ -12,8 +13,8 @@ class Index extends React.Component {
 
     return (
       <Layout>
-        <div>hero</div>
-        <h1>Recent posts</h1>
+        <Hero />
+        <h2>Recent posts</h2>
         {edges.map(({ node }) => {
           return <PostRow key={node.fields.slug} node={node} />
         })}

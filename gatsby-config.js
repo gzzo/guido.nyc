@@ -64,13 +64,12 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
     'gatsby-plugin-remove-trailing-slashes',
-    'gatsby-plugin-sass'
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: [`${__dirname}/src/css`],
+      },
+    }
   ],
 };

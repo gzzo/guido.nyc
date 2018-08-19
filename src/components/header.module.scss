@@ -1,5 +1,21 @@
-@import 'utils/constants.scss';
+@import 'constants.scss';
 
 .header {
-  background-color: $platinum;
+  background-color: $color5;
+  border-top: 1px solid $color5;
+  box-shadow: inset 0 2px 2px -2px white;
+  padding: $lineHeight / 2 0;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightLinks > a:not(:first-child) {
+  margin-left: 10px;
+}
+
+.logo {
+  font-weight: 600;
 }

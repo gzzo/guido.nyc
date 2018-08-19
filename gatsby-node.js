@@ -39,7 +39,11 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const posts = _.filter(result.data.pages.edges, page => page.node.fields.collection === 'posts')
+        const posts = _.filter(result.data.pages.edges, page => {
+          console.log(page.node)
+
+          return page.node.fields.collection === 'posts'
+        })
 
         // paginate posts
         createPaginatedPages({
