@@ -70,6 +70,6 @@ module.exports = {
       options: {
         includePaths: [`${__dirname}/src/css`],
       },
-    }
+    },
   ],
 };

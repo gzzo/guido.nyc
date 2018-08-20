@@ -1,0 +1,25 @@
+@import 'constants.scss';
+
+.container {
+  font-family: "Source Code Pro", monospace;
+  font-size: $fontSize * 2 / 3;
+  line-height: $lineHeight * 2 / 3;
+  margin-bottom: $lineHeight;
+}
+
+.tag {
+  margin-right: 10px;
+  background-color: $color4;
+  padding: $lineHeight / 4;
+  color: $color5;
+}
+
+.tag:hover {
+  background-color: $color4Highlight;
+  color: $color5;
+}
+
+.title {
+  margin-top: 0;
+  margin-right: 10px;
+}

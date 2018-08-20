@@ -20,12 +20,14 @@ exports.createPages = ({ graphql, actions }) => {
             ) {
               edges {
                 node {
+                  excerpt
                   fields {
                     slug
                     collection
                   }
                   frontmatter {
                     title
+                    date(formatString: "MMMM Do, YYYY")
                     tags
                   }
                 }
@@ -78,7 +80,7 @@ exports.createPages = ({ graphql, actions }) => {
         _.each(postsByTag, (posts, tag) => {
           createPaginatedPages({
             edges: posts,
-            pathPrefix: tag,
+            pathPrefix: `/tag/${tag}`,
             createPage: createPage,
             pageTemplate: 'src/templates/index.js',
             pageLength: 2,

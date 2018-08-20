@@ -2,13 +2,15 @@ import React from 'react'
 import moment from 'moment'
 import _ from 'lodash'
 
-import Layout from '../../templates/layout'
+import Layout from 'templates/layout'
+
+import css from './index.module.scss'
 
 class Rose extends React.Component {
   constructor(props) {
     super(props)
 
-    this.endDate = moment(new Date(2016, 8, 14, 23, 55))
+    this.startDate = moment(new Date(2016, 8, 14, 23, 55))
 
     this.state = {
       now: moment(),
@@ -35,7 +37,7 @@ class Rose extends React.Component {
   }
 
   daysBetween() {
-    const diff = moment.duration(this.state.now.diff(this.endDate))
+    const diff = moment.duration(this.state.now.diff(this.startDate))
 
     const phrases = [
       {
@@ -73,8 +75,10 @@ class Rose extends React.Component {
   render() {
     return (
       <Layout>
-        <h1>🌹</h1>
-        <div>{this.daysBetween()}</div>
+        <div className={css.container}>
+          <div className={css.header}>🌹</div>
+          <div className={css.days}>{this.daysBetween()}</div>
+        </div>
       </Layout>
     )
   }

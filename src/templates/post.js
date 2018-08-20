@@ -2,15 +2,19 @@ import React from 'react'
 import _ from 'lodash'
 import { graphql } from 'gatsby'
 
+import Tags from 'components/tags'
 import Layout from './layout'
 
 class PostTemplate extends React.Component {
   render() {
     const post = _.get(this, 'props.data.markdownRemark')
+    const { tags, date, title } = post.frontmatter;
     return (
       <Layout>
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{title}</h1>
+        {date && <small>Published on {date}</small>}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {tags && <Tags tags={tags} />}
       </Layout>
     )
   }
@@ -31,7 +35,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        tags
+        date(formatString: "MMMM Do, YYYY")
       }
     }
   }

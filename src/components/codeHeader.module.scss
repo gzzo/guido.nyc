@@ -1,0 +1,16 @@
+@import 'constants.scss';
+
+.container {
+  margin-bottom: $lineHeight / 2;
+}
+
+.code {
+  user-select: none;
+  font-family: "Source Code Pro", monospace;
+  font-size: $fontSize / 2;
+  color: #888;
+}
+
+.header > * {
+  margin-bottom: 0;
+}

@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from 'templates/layout'
 import PostRow from 'components/postRow'
 import Hero from 'components/hero'
+import CodeHeader from 'components/codeHeader'
 
 const INDEX_NUM_POSTS = 3 // same as limit in query below
 
@@ -14,12 +15,18 @@ class Index extends React.Component {
     return (
       <Layout>
         <Hero />
-        <h2>Recent posts</h2>
+        <CodeHeader code="ls posts/ -r | head -n 3">
+          <h2>
+            Recent posts
+          </h2>
+        </CodeHeader>
         {edges.map(({ node }) => {
           return <PostRow key={node.fields.slug} node={node} />
         })}
         {totalCount > INDEX_NUM_POSTS && (
-          <Link to="/posts">See more posts</Link>
+          <Link to="/posts">
+            <h5>See more posts</h5>
+          </Link>
         )}
       </Layout>
     )
@@ -48,8 +55,9 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM Do, YYYY")
             title
+            tags
           }
         }
       }
