@@ -17,4 +17,6 @@
   font-family: "Roboto Slab", monospace;
   color: $color2;
   text-shadow: 1px 1px $color1;
+  text-align: center;
+  line-height: $lineHeight * 2 / 3;
 }

@@ -10,6 +10,7 @@
 .menuContainer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .rightLinks > a:not(:first-child) {
@@ -19,6 +20,7 @@
 .logo {
   font-weight: 600;
   text-shadow: 1px 1px white;
+  white-space: nowrap;
 }
 
 .rightLinks::before {
