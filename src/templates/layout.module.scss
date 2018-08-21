@@ -29,6 +29,12 @@ a:hover {
   color: $color1Highlight;
 }
 
+blockquote {
+  border-left: $lineHeight / 2 solid $color3;
+  padding-left: $lineHeight;
+  margin-left: 0;
+}
+
 .headerContainer {
   margin-top: $lineHeight / 4;
   margin-bottom: $lineHeight / 2;

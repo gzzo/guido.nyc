@@ -5,6 +5,8 @@ import { graphql } from 'gatsby'
 import Tags from 'components/tags'
 import Layout from './layout'
 
+import css from './post.module.scss'
+
 class PostTemplate extends React.Component {
   render() {
     const post = _.get(this, 'props.data.markdownRemark')
@@ -13,7 +15,7 @@ class PostTemplate extends React.Component {
       <Layout>
         <h1>{title}</h1>
         {date && <small>Published on {date}</small>}
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className={css.post} dangerouslySetInnerHTML={{ __html: post.html }} />
         {tags && <Tags tags={tags} />}
       </Layout>
     )
