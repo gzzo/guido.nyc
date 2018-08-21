@@ -6,7 +6,7 @@ tags: ['S3', 'pypi', 'python', 'nginx']
 
 Hosting a private PyPi repository is as simple as creating an S3 bucket and configuring an 
 nginx instance to authenticate requests to S3 via their 
-[REST](http://s3.amazonaws.com/doc/s3-developer-guide/RESTAuthentication.html) API.
+[REST](https://s3.amazonaws.com/doc/s3-developer-guide/RESTAuthentication.html) API.
 
 We'll also cover options on how to publish your packages to the repository and integrating with Pipenv.
 

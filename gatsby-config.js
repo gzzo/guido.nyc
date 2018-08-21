@@ -21,7 +21,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-page-creator`,
+      resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/pages`,
       },
@@ -67,10 +67,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-trailing-slashes',
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: [`${__dirname}/src/css`],
       },
     },
+
+    // needs to be last
+    'gatsby-plugin-netlify'
   ],
 };
