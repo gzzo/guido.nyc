@@ -17,7 +17,7 @@ class Rose extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.interval = setInterval(this.tick, 1000)
   }
 
