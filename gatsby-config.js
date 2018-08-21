@@ -72,8 +72,5 @@ module.exports = {
         includePaths: [`${__dirname}/src/css`],
       },
     },
-
-    // needs to be last
-    'gatsby-plugin-netlify'
   ],
 };
