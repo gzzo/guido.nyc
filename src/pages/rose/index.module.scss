@@ -1,0 +1,17 @@
+@import 'constants.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  font-size: $fontSize * 4;
+  line-height: $lineHeight * 3 / 2;
+}
+
+.days {
+  font-family: "Source Code Pro", monospace;
+}

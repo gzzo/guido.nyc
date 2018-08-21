@@ -1,20 +1,11 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from 'react'
 
-import css from './container.module.css';
+import css from './container.module.scss'
 
-
-export default class Container extends React.Component {
+class Container extends React.Component {
   render() {
-    const classes = classNames({
-      [css.centered]: this.props.centered,
-      [css.fullscreen]: this.props.fullscreen,
-    });
-
-    return (
-      <div className={classes}>
-        {this.props.children}
-      </div>
-    )
+    return <div className={css.container}>{this.props.children}</div>
   }
 }
+
+export default Container

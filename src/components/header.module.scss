@@ -1,0 +1,30 @@
+@import 'constants.scss';
+
+.header {
+  background-color: $color2;
+  border-top: 1px solid $color2;
+  box-shadow: 0 1px 1px $color5Shadow, inset 0 2px 2px -2px white;
+  padding: $lineHeight / 2 0;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightLinks > a:not(:first-child) {
+  margin-left: 10px;
+}
+
+.logo {
+  font-weight: 600;
+  text-shadow: 1px 1px white;
+}
+
+.rightLinks::before {
+  content: '> $ ls';
+  color: $color5Shadow;
+  font-size: $fontSize * 2 / 3;
+  margin-right: 10px;
+  font-family: "Source Code Pro", monospace;
+}

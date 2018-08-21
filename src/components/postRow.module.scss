@@ -1,0 +1,17 @@
+@import 'constants.scss';
+
+.container {
+  background-color: $color3;
+  padding: $lineHeight * 2;
+  box-shadow: 1px 1px 1px #999;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-shadow: 1px 1px $color5;
+}
+
+.date {
+  color: $color4;
+}
