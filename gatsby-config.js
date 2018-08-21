@@ -54,23 +54,34 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-123955635-1',
-      },
-    },
-    'gatsby-plugin-feed',
-    'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: [`${__dirname}/src/css`],
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-123955635-1',
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-remove-trailing-slashes',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'guido.nyc',
+        short_name: 'guido.nyc',
+        start_url: `/`,
+        background_color: `#F9F7C0`,
+        theme_color: `#ED6A5A`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-offline'
   ],
 };
