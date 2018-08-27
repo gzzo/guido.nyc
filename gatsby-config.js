@@ -3,7 +3,7 @@ module.exports = {
     title: 'guido.nyc',
     author: 'Guido Rainuzzo',
     description: 'A blog by Guido',
-    siteUrl: 'https://guido.nyc/',
+    siteUrl: 'https://www.guido.nyc',
   },
   plugins: [
     {
@@ -70,6 +70,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
