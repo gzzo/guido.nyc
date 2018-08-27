@@ -17,7 +17,7 @@ class Header extends React.Component {
             <div className={css.rightLinks}>
               <Link to="/about">/about</Link>
               <Link to="/posts">/posts</Link>
-              <a href="https://github.com/gzzo" target="_blank">
+              <a href="https://github.com/gzzo" target="_blank" rel="noopener">
                 /github
               </a>
             </div>
