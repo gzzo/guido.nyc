@@ -42,8 +42,6 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const posts = _.filter(result.data.pages.edges, page => {
-          console.log(page.node)
-
           return page.node.fields.collection === 'posts'
         })
 
