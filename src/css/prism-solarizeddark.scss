@@ -10,7 +10,7 @@ pre[class*="language-"] {
   word-break: normal;
   word-wrap: normal;
 
-  line-height: 1.5;
+  line-height: 1.2;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -47,8 +47,9 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: .1em .4em;
-  border-radius: .3em;
+  padding: .1em .2em;
+  background-color: initial;
+  color: $blue;
 }
 
 .token.comment,
