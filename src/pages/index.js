@@ -15,7 +15,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <Hero />
-        <CodeHeader code="ls posts/ -r | head -n 3">
+        <CodeHeader code="ls -t posts/ | head -n 3">
           <h2>
             Recent posts
           </h2>
