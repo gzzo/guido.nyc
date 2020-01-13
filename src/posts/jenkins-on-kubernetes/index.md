@@ -4,6 +4,8 @@ date: '2018-09-25'
 tags: ['kubernetes', 'jenkins', 'docker']
 ---
 
+> There is an update to this post: [Improving on Building Docker images with Jenkins on Kubernetes](/jenkins-kubernetes-update)
+
 If you've tried to build docker images on your Jenkins instance running on your Kubernetes cluster,
 you probably saw this error message trying to debug the problem:
 

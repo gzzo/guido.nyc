@@ -7,7 +7,7 @@ class Hero extends React.Component {
     return (
       <div className={css.hero}>
         <div className={css.title}>
-          Hey, welcome to my blog.
+          Life as a SWE
         </div>
       </div>
     )
