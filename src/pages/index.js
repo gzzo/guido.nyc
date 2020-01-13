@@ -6,16 +6,16 @@ import PostRow from 'components/postRow'
 import Hero from 'components/hero'
 import CodeHeader from 'components/codeHeader'
 
-const INDEX_NUM_POSTS = 3 // same as limit in query below
-
 class Index extends React.Component {
   render() {
+    console.log(this.props)
     const { totalCount, edges } = this.props.data.posts
+    const numEdges = edges.length
 
     return (
       <Layout>
         <Hero />
-        <CodeHeader code="ls -t posts/ | head -n 3">
+        <CodeHeader code={`ls -t posts/ | head -n ${numEdges}`}>
           <h2>
             Recent posts
           </h2>
@@ -23,7 +23,7 @@ class Index extends React.Component {
         {edges.map(({ node }) => {
           return <PostRow key={node.fields.slug} node={node} />
         })}
-        {totalCount > INDEX_NUM_POSTS && (
+        {totalCount > numEdges && (
           <Link to="/posts">
             <h5>See more posts</h5>
           </Link>
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { collection: { eq: "posts" } } }
-      limit: 3
+      limit: 5
     ) {
       totalCount
       edges {

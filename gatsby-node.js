@@ -51,7 +51,7 @@ exports.createPages = ({ graphql, actions }) => {
           pathPrefix: '/posts',
           createPage: createPage,
           pageTemplate: 'src/templates/index.js',
-          pageLength: 2,
+          pageLength: 5,
           context: {
             groupType: 'index'
           }
@@ -81,7 +81,7 @@ exports.createPages = ({ graphql, actions }) => {
             pathPrefix: `/tag/${tag}`,
             createPage: createPage,
             pageTemplate: 'src/templates/index.js',
-            pageLength: 2,
+            pageLength: 5,
             context: {
               groupType: 'tag',
               tag

@@ -6,9 +6,9 @@ import Header from 'components/header'
 import Container from 'components/container'
 
 import css from './layout.module.scss'
-import highlightCss from 'css/highlight.scss';
-import solarizedTheme from 'css/prism-solarizeddark.scss';
-import lineNumberCss from 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'css/highlight.scss';
+import 'css/prism-solarizeddark.scss';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 class Layout extends React.Component {
   render() {
