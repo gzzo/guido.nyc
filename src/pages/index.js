@@ -24,7 +24,7 @@ class Index extends React.Component {
           return <PostRow key={node.fields.slug} node={node} />
         })}
         {totalCount > numEdges && (
-          <Link to="/posts">
+          <Link to="/posts/2">
             <h5>See more posts</h5>
           </Link>
         )}

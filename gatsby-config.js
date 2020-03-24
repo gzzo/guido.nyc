@@ -85,9 +85,6 @@ module.exports = {
       },
     },
 
-    // needs to be after manifest
-    'gatsby-plugin-offline',
-
     // needs to be last
     'gatsby-plugin-netlify'
   ],
