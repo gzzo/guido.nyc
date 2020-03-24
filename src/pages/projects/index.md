@@ -4,6 +4,16 @@ title: Projects
 
 A couple of the projects I have up on my GitHub
 
+### [teamline](https://github.com/gzzo/teamline)
+
+An app to visualize team and driver movements over Formula 1's history. 
+Check it out: [Teamline](https://teamline.guido.nyc/sport/formula)
+
+### [react-global-event-listener](https://github.com/gzzo/react-global-event-listener)
+
+A utility to subscribe to events in React components, useful for events you tend to throttle / debounce like scroll.
+[Read more](https://www.guido.nyc/react-global-event-listener/).
+
 ### [react-base](https://github.com/gzzo/react-base)
 
 This is what I use instead of [`create-react-app`](https://github.com/facebook/create-react-app).
@@ -18,8 +28,6 @@ At the time it was published, it was almost a pixel perfect implementation of th
 how it works internally and added a couple of new features, but it's still a nice project.
 You can see a live example [here](https://shopkeeper-capacity-56747.netlify.com/puzzle/oscar),
 although you might not get very far since I made this for my coworkers after I left a company :)
-
-
 
 ### [s3\_pypi\_publisher](https://github.com/gzzo/s3_pypi_publisher)
 
