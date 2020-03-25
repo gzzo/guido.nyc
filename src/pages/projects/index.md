@@ -7,7 +7,7 @@ A couple of the projects I have up on my GitHub
 ### [teamline](https://github.com/gzzo/teamline)
 
 An app to visualize team and driver movements over Formula 1's history. 
-Check it out: [Teamline](https://teamline.guido.nyc/sport/formula)
+Check it out: [Teamline](https://teamline.guido.nyc/sport/formula).
 
 ### [react-global-event-listener](https://github.com/gzzo/react-global-event-listener)
 

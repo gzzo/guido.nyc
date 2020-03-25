@@ -69,3 +69,8 @@ In SCSS the variables will be loaded into every SCSS file, so with our example a
   color: $colorBlue;
 }
 ```
+
+## Example use case
+
+In the next post, [Sharing Typography with React Across Web and Mobile](/posts/sharing-typography-react-native), we'll
+use this library and some awesome SCSS features to create components from typography constants.
