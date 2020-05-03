@@ -6,8 +6,8 @@ tags: ['react']
 
 Say you have a couple of components in your React application that perform some actions
 on window scroll events.  Adding a bunch of event listeners can be a big performance hit on
-noisy event dispatchers, like `scroll` or `mousemove`, especially if you're wrapping those listeners
-with throttle or debounce.  Wouldn't it be nice if we could subscribe to those events from our 
+noisy event dispatchers, like `scroll` or `mousemove` if you're wrapping those listeners
+with `_.throttle` or `_.debounce`.  Wouldn't it be nice if we could subscribe to those events from our 
 components and only register an event listener once?
 
 ## Install
@@ -32,7 +32,8 @@ class Feed extends React.Component {
   componentWillMount() {
     this.props.subscribeListener(
       window, 
-      'scroll', 
+      'scroll',
+      'window.scroll',
       'Feed.onScroll', 
       this.onScroll,
       {listenerWrapper: _.partialRight(_.throttle, 200)}
@@ -42,7 +43,7 @@ class Feed extends React.Component {
   componentWillUnmount() {
     this.props.unsubscribeListener(
       window,
-      'scroll',
+      'window.scroll',
       'Feed.onScroll'
     )
   }
