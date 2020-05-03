@@ -4,6 +4,10 @@ title: Projects
 
 A couple of the projects I have up on my GitHub
 
+### [algorythm](https://github.com/gzzo/algorythm)
+A small demo of force-directed graph drawing and visualizations for DFS, BFS, and 2-coloring.
+Check it out: [algorythm](https://algorythm.guido.nyc).
+
 ### [teamline](https://github.com/gzzo/teamline)
 
 An app to visualize team and driver movements over Formula 1's history. 
