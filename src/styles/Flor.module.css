@@ -1,0 +1,15 @@
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.header {
+    font-size: 60px;
+    line-height: 120px;
+}

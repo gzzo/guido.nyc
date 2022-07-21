@@ -1,0 +1,8 @@
+.container {
+  font-family: 'Libre Barcode 39 Text', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 100px;
+}
