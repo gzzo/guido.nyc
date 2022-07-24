@@ -51,7 +51,7 @@ function daysBetween(now, startDate) {
 
 export default function Flor() {
   const startDate = moment(new Date(2022, 4, 21, 12, 0));
-  const returnDate = moment(new Date(2022, 7, 7, 8, 0));
+  const returnDate = moment(new Date(2022, 7, 8, 8, 0));
   const [now, setNow] = useState(moment());
   const [intervalRef, setIntervalRef] = useState(null);
 
@@ -72,7 +72,7 @@ export default function Flor() {
       <div>
         <div className={styles.header}>🌸</div>
         <div>{daysBetween(now, startDate)}</div>
-        <div>{daysBetween(returnDate, now)}</div>
+        {now < returnDate && <div>{daysBetween(returnDate, now)}</div>}
       </div>
     </div>
   );
